@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Dapro718\AdvancedPopupBar;
 
 use pocketmine\scheduler\Task;
+use pocketmine\scheduler\TaskScheduler;
+use Dapro718\AdvancedPopupBar\UpdateTask;
 use Dapro718\AdvancedPopupBar\Main;
 
 class CheckerTask extends Task {
@@ -79,3 +81,4 @@ class CheckerTask extends Task {
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
     $this->plugin->getScheduler->sheduleRepeatingTask(new UpdateTask($this->plugin), $interval * 20);
   }
+}
