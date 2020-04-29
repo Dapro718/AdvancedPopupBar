@@ -8,6 +8,8 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\scheduler\TaskScheduler;
 use pocketmine\Player;
+use onebone\economyapi\EconomyAPI;
+use Zedstar16\OnlineTime\Main;
 
 class Main extends PluginBase {
   
@@ -17,6 +19,10 @@ class Main extends PluginBase {
   public function onEnable() {
     $this->config = $this->getConfig();
     $this->getScheduler->scheduleTask(new Checker($this));
+  }
+  
+  public function getInstance(): Main{
+    return self::$instance;
   }
   
   public function updatePopupBar() {
@@ -38,4 +44,32 @@ class Main extends PluginBase {
       if(in_array("{MAX_ONLINE}", $format, true) {
         $count = $this->getServer()->getMaxPlayers();
         $format = str_replace("{MAX_ONLINE}", $count, $format); }
-
+      if(in_array("{PLAYER_ONLINE_TIME}", $format, true) {
+        $onlineTime = $this->getServer()->getPluginManager()->getPlugin("OnlineTime");
+        $time = $onlineTime->getTotalTime($player);
+        $format = str_replace("{PLAYER_ONLINE_TIME}", $time, $format); }
+      if(in_array("{HEALTH}", $format, true) {
+        $health = $player->getHealth();
+        $format = str_replace("{HEALTH}", $health, $format); }
+      if(in_array("{MAX_HEALTH}", $format, true) {
+        $maxHealth = $player->getMaxHealth();
+        $format = str_replace("{MAX_HEALTH}", $maxHealth, $format); }
+      if(in_array("{MONEY}", $format, true) {
+        $money = EconomyAPI::getInstance()->getMoney($player);
+        $format = str_replace("{MONEY}", $money, $format); }
+      if(in_array("{KILLS}", $format, true) {
+        $kills = KDR::getInstance()->getProvider()->getPlayerKillPoints($player);
+        $format = str_replace("{KILLS}", $kills, $format); }
+      if(in_array("{DEATHS}", $format, true) {
+        $deaths = KDR::getInstance()->getProvider()->getPlayerDeathPoints($player);
+        $format = str_replace("{DEATHS}", $deaths, $format); }
+      if(in_array("{KILL_DEATH_RATE}", $format, true) {
+        $kdr = KDR::getInstance()->getProvider()->getKillToDeathRatio($player);
+        $format = str_replace("{KILL_DEATH_RATE}", $kdr, $format); }
+      if(in_array("{FACTION}", $format, true) {
+        $factionsPro = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
+        $faction = $factionsPro->getFaction($player);
+        $format = str_replace("{FACTION}", $faction, $format); }
+      if(in_array("{FACTION_POWER}", $format, true) {
+        $factionsPro = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
+        $format = str_replace("{FACTION_POWER}", $faction, $format); }
