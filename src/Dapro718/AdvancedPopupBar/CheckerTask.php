@@ -19,29 +19,31 @@ class CheckerTask extends Task {
    $this->config = $plugin->getConfig();
   }
  
-  public onRun(int $tick) {
+  public function onRun(int $tick) {
+    $format = $this->config->get("popup-format");
+    $interval = $this->config->get("update-interval");
       if(in_array("{PLAYER_ONLINE_TIME}", $format, true)) {
         $onlineTime = $this->getServer()->getPluginManager()->getPlugin("OnlineTime");
         if($onlineTime === null) {
           $this->server->getLogger()->error("Could not find dependency: OnlineTime. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
       if(in_array("{MONEY}", $format, true)) {
-        $economyapi = $this->server->getPluginManager()->getPlugin("EconomyAPI")
+        $economyapi = $this->server->getPluginManager()->getPlugin("EconomyAPI");
         if($economyapi === null) {
           $this->server->getLogger()->error("Could not find dependency: EconomyAPI. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
       if(in_array("{KILLS}", $format, true)) {
-        $kdr = $this->server->getPluginManager()->getPlugin("KDR")
+        $kdr = $this->server->getPluginManager()->getPlugin("KDR");
         if($kdr === null) {
           $this->server->getLogger()->error("Could not find dependency: KDR. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
       if(in_array("{DEATHS}", $format, true)) {
-        $kdr = $this->server->getPluginManager()->getPlugin("KDR")
+        $kdr = $this->server->getPluginManager()->getPlugin("KDR");
         if($kdr === null) {
           $this->server->getLogger()->error("Could not find dependency: KDR. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
       if(in_array("{KILL_DEATH_RATE}", $format, true)) {
-        $kdr = $this->server->getPluginManager()->getPlugin("KDR")
+        $kdr = $this->server->getPluginManager()->getPlugin("KDR");
         if($kdr === null) {
           $this->server->getLogger()->error("Could not find dependency: KDR. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
@@ -75,5 +77,5 @@ class CheckerTask extends Task {
         if($skyblock === null) {
           $this->server->getLogger()->error("Could not find dependency: RedSkyBlock. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
+    $this->plugin->getScheduler->sheduleRepeatingTask(new UpdateTask($this->plugin), $interval * 20);
   }
-    
