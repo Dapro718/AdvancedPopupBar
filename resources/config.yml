@@ -11,6 +11,7 @@
 # Edit how often the popup bar is updated. (In seconds, no more that 5 recomended. If using coordinates, 1 second recomended)
 update-interval:
 
+# Utils
 
 # {X} - Player's X coordinate.
 # {Y} - Player's Y coordinate.
@@ -23,10 +24,28 @@ update-interval:
 # {HEALTH} - Player's current health. 
 # {MAX_HEALTH} - Player's maximum health.
 # {MONEY} - Player's money.
+
+
+# KDR Plugin
+
 # {KILLS} - Player's total kills.
 # {DEATHS} - Player's total deaths.
 # {KILL_DEATH_RATE} - Player's kill death rate.
-# {} - 
-# {} - 
-# {} - 
-# {} - 
+
+
+# Faction Plugin
+
+# {FACTION} - Faction the player is in.
+# {FACTION_POWER} - The power of the faction the player is in.
+
+
+# RedSkyBlock Plugin
+
+# {ISLAND_NAME} - The player's island name.
+# {ISLAND_SIZE} - The player's island size.
+# {ISLAND_RANK} - The player's island rank.
+# {ISLAND_VALUE} - The player's island value.
+
+
+# Edit the popup bar format. Use '§' for colors and the tags above for addons.
+popup-format: '§e{X}, {Y}, {Z} | {ONLINE}/{MAX_ONLINE} players online!'
