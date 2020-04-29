@@ -1,4 +1,5 @@
 # Fully customizable popup bar.
+# If you have any tag requests please DM them to Dapro#3132 on Disocord.
 # DM Dapro#3132 if you need any help.
 
 # Imperial Network
@@ -9,7 +10,7 @@
 
 
 # Edit how often the popup bar is updated. (In seconds, no more that 5 recomended. If using coordinates, 1 second recomended)
-update-interval:
+update-interval: 60
 
 # Utils
 
@@ -18,8 +19,6 @@ update-interval:
 # {Z} - Player's Z coordinate.
 # {ONLINE} - Current online players.
 # {MAX_ONLINE} - Maxumim possible online players.
-# {TIME} - Current time. (mm/dd/yyyy).
-# {ONLINE_TIME} - Online time of the server.
 # {PLAYER_ONLINE_TIME} - Player's total online time.
 # {HEALTH} - Player's current health. 
 # {MAX_HEALTH} - Player's maximum health.
@@ -45,6 +44,8 @@ update-interval:
 # {ISLAND_SIZE} - The player's island size.
 # {ISLAND_RANK} - The player's island rank.
 # {ISLAND_VALUE} - The player's island value.
+
+# If you have any tag requests please DM them to Dapro#3132 on Disocord.
 
 
 # Edit the popup bar format. Use '§' for colors and the tags above for addons.
