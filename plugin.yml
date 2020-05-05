@@ -1,6 +1,6 @@
 name: AdvancedPopupBar
 description: Fully customizable popup bar.
-main: Dapro718\AdvancedPopupBar\Main
+main: Dapro718\AdvancedPopupBar\PopupMain
 version: 0.0.1
 api: 3.11.2
 author: Dapro718
