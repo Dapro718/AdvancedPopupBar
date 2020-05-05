@@ -10,7 +10,7 @@ use Dapro718\AdvancedPopupBar\Main;
 
 class UpdateTask extends Task {
 
-  public $plugin
+  public $plugin;
   
   public function __construct(Main $plugin) {
     $this->plugin = $plugin;
