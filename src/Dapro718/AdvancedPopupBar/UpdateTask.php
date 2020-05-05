@@ -6,13 +6,13 @@ namespace Dapro718\AdvancedPopupBar;
 
 use pocketmine\scheduler\Task;
 use pocketmine\Player;
-use Dapro718\AdvancedPopupBar\Main;
+use Dapro718\AdvancedPopupBar\PopupMain;
 
 class UpdateTask extends Task {
 
   public $plugin;
   
-  public function __construct(Main $plugin) {
+  public function __construct(PopupMain $plugin) {
     $this->plugin = $plugin;
   }
   
