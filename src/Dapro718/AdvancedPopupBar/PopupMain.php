@@ -25,7 +25,7 @@ class PopupMain extends PluginBase {
     $this->getScheduler()->scheduleDelayedTask(new CheckerTask($this), 1);
   }
   
-  public function getInstance(): Main{
+  public function getInstance(): PopupMain{
     return self::$instance;
   }
   
