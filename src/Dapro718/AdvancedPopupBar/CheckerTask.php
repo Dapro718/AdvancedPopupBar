@@ -7,7 +7,7 @@ namespace Dapro718\AdvancedPopupBar;
 use pocketmine\scheduler\Task;
 use pocketmine\scheduler\TaskScheduler;
 use Dapro718\AdvancedPopupBar\UpdateTask;
-use Dapro718\AdvancedPopupBar\Main;
+use Dapro718\AdvancedPopupBar\PopupMain;
 
 class CheckerTask extends Task {
 
