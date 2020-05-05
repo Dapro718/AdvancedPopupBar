@@ -15,7 +15,7 @@ use RedCraftPE\RedSkyBlock\Skyblock;
 use FactionsPro\FactionsMain;
 use Dapro718\AdvancedPopupBat\CheckerTask;
 
-class Main extends PluginBase {
+class PopupMain extends PluginBase {
   
   private static $instance;
   public $config;
