@@ -91,7 +91,8 @@ class PopupMain extends PluginBase {
         $size = SkyBlock::getInstance()->getSize($player);
         $format = str_replace("{ISLAND_SIZE}", $size, $format); }
       if(strpos($format, "{ISLAND_RANK}")) {
-        $rank = SkyBlock::getInstance()->calcRank($player);
+        $name = SkyBlock::getInstance()->getIslandName($player);
+        $rank = SkyBlock::getInstance()->calcRank($name);
         $format = str_replace("{ISLAND_RANK}", $rank, $format); }
       if(strpos($format, "{ISLAND_VALUE}")) {
         $value = SkyBlock::getInstance()->getValue($player);
