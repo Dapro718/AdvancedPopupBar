@@ -102,7 +102,9 @@ class PopupMain extends PluginBase {
   //API fuctions
   public function updatePopup() {
     $players = $this->getServer()->getOnlinePlayers();
-    foreach ($players as $player) {
+    
+    foreach ($players as $playerN) {
+      $player = $playerN->getName();
       $format = $this->getFormat($player);
       $player->sendPopup($format);
     }
