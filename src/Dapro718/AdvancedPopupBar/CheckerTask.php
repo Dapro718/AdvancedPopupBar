@@ -15,7 +15,7 @@ class CheckerTask extends Task {
   public $server;
   public $config;
   
-  public function __construct(Main $plugin) {
+  public function __construct(PopupMain $plugin) {
    $this->plugin = $plugin;
    $this->server = $plugin->getServer();
    $this->config = $plugin->getConfig();
