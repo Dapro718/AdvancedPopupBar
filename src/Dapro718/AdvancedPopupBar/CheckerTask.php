@@ -50,7 +50,7 @@ class CheckerTask extends Task {
           $this->server->getLogger()->error("Could not find dependency: KDR. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
       if(strpos($format, "{FACTION}")) {
-        $factionsPro = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
+        $factionsPro = $this->server->getPluginManager()->getPlugin("FactionsPro");
         if($factionsPro === null) {
           $this->server->getLogger()->error("Could not find dependency: FactionsPro. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
