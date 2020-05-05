@@ -36,62 +36,62 @@ class PopupMain extends PluginBase {
   
   public function getFormat($player) {
     $format = $this->config->get("popup-format");
-      if(in_array("{X}", $format, true)) {
+      if(strpos($format, "{X}")) {
         $x = $player->getFloorX();
         $format = str_replace("{X}", $x, $format); }
-      if(in_array("{Y}", $format, true)) {
+      if(strpos($format, "{Y}")) {
         $y = $player->getFloorY();
         $format = str_replace("{Y}", $y, $format); }
-      if(in_array("{Z}", $format, true)) {
+      if(strpos($format, "{Z}")) {
         $z = $player->getFloorZ();
         $format = str_replace("{Z}", $z, $format); }
-      if(in_array("{ONLINE}", $format, true)) {
+      if(strpos($format, "{ONLINE}")) {
         $count = count($players);
         $format = str_replace("{ONLINE}", $count, $format); }
-      if(in_array("{MAX_ONLINE}", $format, true)) {
+      if(strpos($format, "{MAX_ONLINE}")) {
         $count = $this->getServer()->getMaxPlayers();
         $format = str_replace("{MAX_ONLINE}", $count, $format); }
-      if(in_array("{PLAYER_ONLINE_TIME}", $format, true)) {
+      if(strpos($format, "{PLAYER_ONLINE_TIME}")) {
         $onlineTime = $this->getServer()->getPluginManager()->getPlugin("OnlineTime");
         $time = $onlineTime->getTotalTime($player);
         $format = str_replace("{PLAYER_ONLINE_TIME}", $time, $format); }
-      if(in_array("{HEALTH}", $format, true)) {
+      if(strpos($format, "{HEALTH}")) {
         $health = $player->getHealth();
         $format = str_replace("{HEALTH}", $health, $format); }
-      if(in_array("{MAX_HEALTH}", $format, true)) {
+      if(strpos($format, "{MAX_HEALTH}")) {
         $maxHealth = $player->getMaxHealth();
         $format = str_replace("{MAX_HEALTH}", $maxHealth, $format); }
-      if(in_array("{MONEY}", $format, true)) {
+      if(strpos($format, "{MONEY}")) {
         $money = EconomyAPI::getInstance()->myMoney($player);
         $format = str_replace("{MONEY}", $money, $format); }
-      if(in_array("{KILLS}", $format, true)) {
+      if(strpos($format, "{KILLS}")) {
         $kills = KDR::getInstance()->getProvider()->getPlayerKillPoints($player);
         $format = str_replace("{KILLS}", $kills, $format); }
-      if(in_array("{DEATHS}", $format, true)) {
+      if(strpos($format, "{DEATHS}")) {
         $deaths = KDR::getInstance()->getProvider()->getPlayerDeathPoints($player);
         $format = str_replace("{DEATHS}", $deaths, $format); }
-      if(in_array("{KILL_DEATH_RATE}", $format, true)) {
+      if(strpos($format, "{KILL_DEATH_RATE}", $format, true)) {
         $kdr = KDR::getInstance()->getProvider()->getKillToDeathRatio($player);
         $format = str_replace("{KILL_DEATH_RATE}", $kdr, $format); }
-      if(in_array("{FACTION}", $format, true)) {
+      if(strpos($format, "{FACTION}")) {
         $factionsPro = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
         $faction = $factionsPro->getFaction($player);
         $format = str_replace("{FACTION}", $faction, $format); }
-      if(in_array("{FACTION_POWER}", $format, true)) {
+      if(strpos($format, "{FACTION_POWER}")) {
         $factionsPro = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
         $faction = $factionsPro->getFaction($player);
         $power = $factionsPro->getFactionPower($faction);
         $format = str_replace("{FACTION_POWER}", $power, $format); }
-      if(in_array("{ISLAND_NAME}", $format, true)) {
+      if(strpos($format, "{ISLAND_NAME}")) {
         $name = SkyBlock::getInstance()->getIslandName($player);
         $format = str_replace("{ISLAND_NAME}", $name, $format); }
-      if(in_array("{ISLAND_SIZE}", $format, true)) {
+      if(strpos($format, "{ISLAND_SIZE}")) {
         $name = SkyBlock::getInstance()->getSize($player);
         $format = str_replace("{ISLAND_VALUE}", $value, $format); }
-      if(in_array("{ISLAND_RANK}", $format, true)) {
+      if(strpos($format, "{ISLAND_RANK}")) {
         $name = SkyBlock::getInstance()->calcRank($player);
         $format = str_replace("{ISLAND_RANK}", $rank, $format); }
-      if(in_array("{ISLAND_VALUE}", $format, true)) {
+      if(strpos($format, "{ISLAND_VALUE}")) {
         $name = SkyBlock::getInstance()->getValue($player);
         $format = str_replace("{ISLAND_VALUE}", $size, $format); }
     return $format;
