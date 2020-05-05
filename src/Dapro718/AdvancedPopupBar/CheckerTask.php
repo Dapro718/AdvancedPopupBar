@@ -79,6 +79,5 @@ class CheckerTask extends Task {
         if($skyblock === null) {
           $this->server->getLogger()->error("Could not find dependency: RedSkyBlock. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-    $this->plugin->getScheduler()->scheduleRepeatingTask(new UpdateTask($this->plugin), $interval * 20);
   }
 }
