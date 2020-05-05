@@ -13,7 +13,7 @@ use onebone\economyapi\EconomyAPI;
 use Zedstar16\OnlineTime\Main;
 use RedCraftPE\RedSkyBlock\Skyblock;
 use FactionsPro\FactionsMain;
-use Dapro718\AdvancedPopupBat\CheckerTask;
+use Dapro718\AdvancedPopupBar\CheckerTask;
 
 class PopupMain extends PluginBase {
   
@@ -57,7 +57,7 @@ class PopupMain extends PluginBase {
         $maxHealth = $player->getMaxHealth();
         $format = str_replace("{MAX_HEALTH}", $maxHealth, $format); }
       if(in_array("{MONEY}", $format, true)) {
-        $money = EconomyAPI::getInstance()->getMoney($player);
+        $money = EconomyAPI::getInstance()->myMoney($player);
         $format = str_replace("{MONEY}", $money, $format); }
       if(in_array("{KILLS}", $format, true)) {
         $kills = KDR::getInstance()->getProvider()->getPlayerKillPoints($player);
