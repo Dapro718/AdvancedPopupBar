@@ -36,6 +36,7 @@ class PopupMain extends PluginBase {
   
   public function getFormat($player) {
     $format = $this->config->get("popup-format");
+    $players = $this->getServer()->getOnlinePlayers();
       if(strpos($format, "{X}")) {
         $x = $player->getFloorX();
         $format = str_replace("{X}", $x, $format); }
