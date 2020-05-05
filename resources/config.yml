@@ -1,16 +1,10 @@
 # Fully customizable popup bar.
-# If you have any tag requests please DM them to Dapro#3132 on Disocord.
+# If you have any tag requests please DM them to Dapro#3132 on Discord.
 # DM Dapro#3132 if you need any help.
-
-# Imperial Network
-# Ip: play-imperialpe.xyz
-# Port: 19132
-# Discord: https://discord.gg/GdtwwuG
-# Website: imperialpe.xyz
 
 
 # Edit how often the popup bar is updated. (In seconds, no more that 5 recomended. If using coordinates, 1 second recomended)
-update-interval: 60
+update-interval: 5
 
 # Utils
 
@@ -48,5 +42,18 @@ update-interval: 60
 # If you have any tag requests please DM them to Dapro#3132 on Disocord.
 
 
-# Edit the popup bar format. Use '§' for colors and the tags above for addons.
+# Edit the popup bar format. Use '§' for colors and the tags above for addons. (Only works if multi world is set to false).
 popup-format: '§e{X}, {Y}, {Z} | {ONLINE}/{MAX_ONLINE} players online!'
+
+# Allows you to have different popup bars per world.
+multi-world: false
+
+# Edit the popup bar format per world. Use '§' for colors and the tags above for addons. 
+# Only works if multi world is set to true.
+# Example: world: '§e{X}, {Y}, {Z} | {ONLINE}/{MAX_ONLINE} players online!'
+
+worlds: 
+ - world:
+   - '§e{X}, {Y}, {Z} | {ONLINE}/{MAX_ONLINE} players online!'
+ - world2:
+   - 'This is a popup bar!'
