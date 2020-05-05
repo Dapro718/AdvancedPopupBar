@@ -22,7 +22,7 @@ class PopupMain extends PluginBase {
   
   public function onEnable() {
     $this->config = $this->getConfig();
-    $this->getScheduler->scheduleDelayedTask(new CheckerTask($this), 1);
+    $this->getScheduler()->scheduleDelayedTask(new CheckerTask($this), 1);
   }
   
   public function getInstance(): Main{
