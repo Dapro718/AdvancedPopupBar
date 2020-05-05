@@ -71,7 +71,7 @@ class PopupMain extends PluginBase {
       if(strpos($format, "{DEATHS}")) {
         $deaths = KDR::getInstance()->getProvider()->getPlayerDeathPoints($player);
         $format = str_replace("{DEATHS}", $deaths, $format); }
-      if(strpos($format, "{KILL_DEATH_RATE}", $format, true)) {
+      if(strpos($format, "{KILL_DEATH_RATE}")) {
         $kdr = KDR::getInstance()->getProvider()->getKillToDeathRatio($player);
         $format = str_replace("{KILL_DEATH_RATE}", $kdr, $format); }
       if(strpos($format, "{FACTION}")) {
