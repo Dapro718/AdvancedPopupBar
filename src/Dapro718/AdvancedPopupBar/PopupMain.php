@@ -29,6 +29,11 @@ class PopupMain extends PluginBase {
     return self::$instance;
   }
   
+  public function startUpdater() {
+    $interval = $this->config->get("update-interval") * 20;
+    $this->getScheduler()->scheduleRepeatingTask(new UpdateTask($this), $interval);
+  }
+  
   public function getFormat($player) {
     $format = $config->get("popup-format");
       if(in_array("{X}", $format, true)) {
