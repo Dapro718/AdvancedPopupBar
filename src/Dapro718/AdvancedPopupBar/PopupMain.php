@@ -12,6 +12,7 @@ use pocketmine\Server;
 use onebone\economyapi\EconomyAPI;
 use Zedstar16\OnlineTime\Main;
 use RedCraftPE\RedSkyBlock\Skyblock;
+use JackMD\KDR\KDR;
 use FactionsPro\FactionsMain;
 use Dapro718\AdvancedPopupBar\CheckerTask;
 
