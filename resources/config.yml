@@ -16,6 +16,10 @@ update-interval: 5
 # {PLAYER_ONLINE_TIME} - Player's total online time.
 # {HEALTH} - Player's current health. 
 # {MAX_HEALTH} - Player's maximum health.
+
+
+# EconomyAPI Plugin
+
 # {MONEY} - Player's money.
 
 
