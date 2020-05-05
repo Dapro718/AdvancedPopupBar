@@ -25,7 +25,7 @@ class CheckerTask extends Task {
     $format = $this->config->get("popup-format");
     $interval = $this->config->get("update-interval");
       if(strpos($format, "{PLAYER_ONLINE_TIME}")) {
-        $onlineTime = $this->getServer()->getPluginManager()->getPlugin("OnlineTime");
+        $onlineTime = $this->server->getPluginManager()->getPlugin("OnlineTime");
         if($onlineTime === null) {
           $this->server->getLogger()->error("Could not find dependency: OnlineTime. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
@@ -55,7 +55,7 @@ class CheckerTask extends Task {
           $this->server->getLogger()->error("Could not find dependency: FactionsPro. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
       if(strpos($format, "{FACTION_POWER}")) {
-        $factionsPro = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
+        $factionsPro = $this->server->getPluginManager()->getPlugin("FactionsPro");
         if($factionsPro === null) {
           $this->server->getLogger()->error("Could not find dependency: FactionsPro. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
