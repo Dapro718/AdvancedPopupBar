@@ -24,57 +24,57 @@ class CheckerTask extends Task {
   public function onRun(int $tick) {
     $format = $this->config->get("popup-format");
     $interval = $this->config->get("update-interval");
-      if(in_array("{PLAYER_ONLINE_TIME}", $format, true)) {
+      if(strpos($format, "{PLAYER_ONLINE_TIME}")) {
         $onlineTime = $this->getServer()->getPluginManager()->getPlugin("OnlineTime");
         if($onlineTime === null) {
           $this->server->getLogger()->error("Could not find dependency: OnlineTime. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{MONEY}", $format, true)) {
+      if(strpos($format, "{MONEY}")) {
         $economyapi = $this->server->getPluginManager()->getPlugin("EconomyAPI");
         if($economyapi === null) {
           $this->server->getLogger()->error("Could not find dependency: EconomyAPI. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{KILLS}", $format, true)) {
+      if(strpos($format, "{KILLS}")) {
         $kdr = $this->server->getPluginManager()->getPlugin("KDR");
         if($kdr === null) {
           $this->server->getLogger()->error("Could not find dependency: KDR. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{DEATHS}", $format, true)) {
+      if(strpos($format, "{DEATHS}")) {
         $kdr = $this->server->getPluginManager()->getPlugin("KDR");
         if($kdr === null) {
           $this->server->getLogger()->error("Could not find dependency: KDR. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{KILL_DEATH_RATE}", $format, true)) {
+      if(strpos($format, "{KILL_DEATH_RATE}")) {
         $kdr = $this->server->getPluginManager()->getPlugin("KDR");
         if($kdr === null) {
           $this->server->getLogger()->error("Could not find dependency: KDR. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{FACTION}", $format, true)) {
+      if(strpos($format, "{FACTION}")) {
         $factionsPro = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
         if($factionsPro === null) {
           $this->server->getLogger()->error("Could not find dependency: FactionsPro. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{FACTION_POWER}", $format, true)) {
+      if(strpos($format, "{FACTION_POWER}")) {
         $factionsPro = $this->getServer()->getPluginManager()->getPlugin("FactionsPro");
         if($factionsPro === null) {
           $this->server->getLogger()->error("Could not find dependency: FactionsPro. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{ISLAND_NAME}", $format, true)) {
+      if(strpos($format, "{ISLAND_NAME}")) {
         $skyblock = $this->server->getPluginManager()->getPlugin("RedSkyBlock");
         if($skyblock === null) {
           $this->server->getLogger()->error("Could not find dependency: RedSkyBlock. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{ISLAND_SIZE}", $format, true)) {
+      if(strpos($format, "{ISLAND_SIZE}")) {
         $skyblock = $this->server->getPluginManager()->getPlugin("RedSkyBlock");
         if($skyblock === null) {
           $this->server->getLogger()->error("Could not find dependency: RedSkyBlock. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{ISLAND_RANK}", $format, true)) {
+      if(strpos($format, "{ISLAND_RANK}")) {
         $skyblock = $this->server->getPluginManager()->getPlugin("RedSkyBlock");
         if($skyblock === null) {
           $this->server->getLogger()->error("Could not find dependency: RedSkyBlock. Please install this plugin.");
           $this->server->getPluginManager()->disablePlugin($this->plugin); } }
-      if(in_array("{ISLAND_VALUE}", $format, true)) {
+      if(strpos($format, "{ISLAND_VALUE}")) {
         $skyblock = $this->server->getPluginManager()->getPlugin("RedSkyBlock");
         if($skyblock === null) {
           $this->server->getLogger()->error("Could not find dependency: RedSkyBlock. Please install this plugin.");
